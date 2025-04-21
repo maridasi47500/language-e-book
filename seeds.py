@@ -1,0 +1,13 @@
+from words import Words
+Words.create({"word":"hello","phon":"","language":"ENG"})
+Words.create({"word":"bonjour","phon":"","language":"FRA"})
+Words.create({"word":"ciao","phon":"","language":"ITA"})
+Words.create({"word":"hola","phon":"","language":"SPA"})
+Words.create({"word":"hallo","phon":"","language":"GER"})
+Words.create({"word":"hey","phon":"","language":"GRK"})
+Words.create({"word":"hey","phon":"","language":"RUS"})
+Words.create({"word":"hey","phon":"","language":"CHI"})
+Words.create({"word":"hey","phon":"","language":"JPN"})
+Words.create({"word":"hey","phon":"","language":"KOR"})
+Words.create({"word":"hey","phon":"","language":"HEB"})
+Words.create({"word":"hey","phon":"","language":"ARA"})
