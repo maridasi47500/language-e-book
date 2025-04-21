@@ -1,19 +1,17 @@
 # bienvenue 
 - la librarie python :
-- pip install -m requirements 
+- vous pouvez faire pip3 install -r requirements 
+- vous pouvez faire rm myFile.db
+- vous pouvez faire python3 seeds.p
 - vous pouvez faire sh ./mysite.sh 
 
 # job-search
  ````
-gem install watir addressable i18n logger
-pip3 install geopy
-pip3 install geopandas
-mkdir -p ~/going/to/snorkeling/spot/venv
-python3 -m venv ~/going/to/snorkeling/spot/venv
-source ~/going/to/snorkeling/spot/bin/activate
+mkdir -p ~/going/to/foreign/country/venv
+python3 -m venv ~/going/to/foreign/country/venv
+source ~/going/to/foreign/country/bin/activate
 sh mysite.sh
 
 
 ````
-# snorkeling-search
 # language-e-book
