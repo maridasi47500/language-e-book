@@ -174,6 +174,7 @@ class Route():
                     '^/category$': self.category,
                     '^/cal$': self.cal,
                     "^/conv/([0-9]+)$":self.conv,
+                    "^/convmetric$":self.convmetric,
                     '^/geography$': self.geography,
                     '^/favorites$': self.favorites,
                     '^/setup$': self.setup,
