@@ -1,0 +1,7 @@
+<div>
+<label for="spa">
+spanish
+</label>
+<input type="checkbox" name="setup" value="spa" id="spa"/>
+</div>
+

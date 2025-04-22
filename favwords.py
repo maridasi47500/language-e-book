@@ -3,34 +3,30 @@ import sqlite3
 import sys
 import re
 from model import Model
-class Words(Model):
+class Favwords(Model):
     def __init__(self):
         self.con=sqlite3.connect(self.mydb)
         self.con.row_factory = sqlite3.Row
         self.cur=self.con.cursor()
-        self.cur.execute("""create table if not exists words(
+        self.cur.execute("""create table if not exists favwords(
         id integer primary key autoincrement,
-        word text,
-            language text,
-            phon text,
-            word_id text,
-            mytext text
+        word_id text
                     );""")
         self.con.commit()
         #self.con.close()
     def getall(self):
-        self.cur.execute("select * from words")
+        self.cur.execute("select * from favwords")
 
         row=self.cur.fetchall()
         return row
     def deletebyid(self,myid):
 
-        self.cur.execute("delete from words where id = ?",(myid,))
+        self.cur.execute("delete from favwords where id = ?",(myid,))
         job=self.cur.fetchall()
         self.con.commit()
         return None
     def getbyid(self,myid):
-        self.cur.execute("select * from words where id = ?",(myid,))
+        self.cur.execute("select * from favwords where id = ?",(myid,))
         row=dict(self.cur.fetchone())
         print(row["id"], "row id")
         job=self.cur.fetchall()
@@ -53,14 +49,14 @@ class Words(Model):
         print(myhash,myhash.keys())
         myid=None
         try:
-          self.cur.execute("insert into words (word,language,phon,word_id,mytext) values (:word,:language,:phon,:word_id,:mytext)",myhash)
+          self.cur.execute("insert into favwords (word_id) values (:word_id)",myhash)
           self.con.commit()
           myid=str(self.cur.lastrowid)
         except Exception as e:
           print("my error"+str(e))
         azerty={}
-        azerty["words_id"]=myid
-        azerty["notice"]="votre words a été ajouté"
+        azerty["favwords_id"]=myid
+        azerty["notice"]="votre favwords a été ajouté"
         return azerty
 
 

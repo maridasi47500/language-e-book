@@ -100,10 +100,15 @@ class Route():
         getparams=("id",)
         myparam=self.get_this_route_param(getparams,params)
         return self.render_figure.render_figure("welcome/game.html")
-    def game(self,params={}):
+    def setup(self,params={}):
         getparams=("id",)
         myparam=self.get_this_route_param(getparams,params)
-        return self.render_figure.render_figure("welcome/game.html")
+        return self.render_figure.render_figure("welcome/setup.html")
+    def setup1(self,params={}):
+        myparams=self.get_post_data()(params=("setup",))
+        self.myProgram.set_session_param("setup",myparams["setup"])
+        myparam=self.get_this_route_param(getparams,params)
+        return self.render_figure.render_figure("welcome/setup1.html")
     def voirtoutcequejaiajoute(self,data):
 
         print("tout")
@@ -159,6 +164,12 @@ class Route():
             ROUTES={
 
 
+                    "^/words/([0-9]+)$":self.voirmot,
+                    "^/phrases$":self.voirmot,
+                    "^/phrases/([0-9]+)/cat/([0-9]+)$":self.voirmot,
+                    "^/subject/phrase/([0-9]+)$":self.voirmot,
+                    "^/searchsubject$":self.voirmot,
+
                     '^/singleword$': self.singleword,
                     '^/category$': self.category,
                     '^/cal$': self.cal,
@@ -166,10 +177,12 @@ class Route():
                     '^/geography$': self.geography,
                     '^/favorites$': self.favorites,
                     '^/setup$': self.setup,
+                    '^/setup1$': self.setup1,
                     '^/game$': self.game,
                     '^/language$': self.language,
                     '^/history$': self.history,
                     '^/amenddata$': self.amenddata,
+                    '^/favorites$': self.favorites,
                     '^/addtofavorites$': self.addtofavorites,
                     '^/europeaninput$': self.europeaninput,
                     '^/chineseinput$': self.chineseinput,
